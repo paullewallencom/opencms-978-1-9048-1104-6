@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  - Template for example.com site. Loads a JSP template
+  -->
+<xmltemplate>
+  <stylesheet/>
+  <template>
+    <element name="jsptemplate"/>
+  </template>
+  <elementdef name="jsptemplate">
+    <class>com.opencms.flex.CmsJspTemplate</class>   
+    <template>../jsptemplates/example-page-template.jsp</template>
+  </elementdef>
+</xmltemplate>

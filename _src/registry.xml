@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry>
+    <system>
+        <restype>
+            <name>folder</name>
+            <launcherType>0</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeFolder</resourceClass>
+        </restype>
+        <restype>
+            <name>page</name>
+            <launcherType>3</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypePage</resourceClass>
+        </restype>
+        <restype>
+            <name>link</name>
+            <launcherType>4</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeLink</resourceClass>
+        </restype>
+        <restype>
+            <name>plain</name>
+            <launcherType>1</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypePlain</resourceClass>
+        </restype>
+        <restype>
+            <name>XMLTemplate</name>
+            <launcherType>3</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeXMLTemplate</resourceClass>
+        </restype>
+        <restype>
+            <name>binary</name>
+            <launcherType>1</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeBinary</resourceClass>
+        </restype>
+        <restype>
+            <name>image</name>
+            <launcherType>1</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeImage</resourceClass>
+        </restype>
+        <restype>
+            <name>compatiblePlain</name>
+            <launcherType>1</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeCompatiblePlain</resourceClass>
+        </restype>
+        <restype>
+            <name>jsp</name>
+            <launcherType>6</launcherType>
+            <launcherClass/>
+            <resourceClass>com.opencms.file.CmsResourceTypeJsp</resourceClass>
+        </restype>
+        <restype>
+            <name>genxml</name>
+            <launcherType>21</launcherType>
+            <!--<launcherType>1</launcherType>-->
+            <launcherClass>tv.aleph_null.opencms.xml.generic.CmsXslLauncher</launcherClass>
+            <resourceClass>com.opencms.file.GenericXmlResourceType</resourceClass>
+        </restype>
+        <view>
+            <name>select.explorer</name>
+            <url>/system/workplace/action/explorer_new.html</url>
+        </view>
+        <view>
+            <name>select.admin</name>
+            <url>/system/workplace/action/administration.html</url>
+        </view>
+        <view>
+            <name>select.tasks</name>
+            <url>/system/workplace/action/tasks.html</url>
+        </view>
+        <exportpoint>
+            <source>/system/workplace/resources/</source>
+            <destination>resources/</destination>
+        </exportpoint>
+        <exportpoint>
+            <source>/system/modules/default/classes/</source>
+            <destination>WEB-INF/classes/</destination>
+        </exportpoint>
+        <smtpserver>aleph-null.tv</smtpserver>
+        <smtpserver2>localhost</smtpserver2>
+        <defaultmailsender>mbutcher@aleph-null.tv</defaultmailsender>
+        <checklink>
+            <mailfrom>mbutcher@aleph-null.tv</mailfrom>
+            <mailto>mbutcher@aleph-null.tv</mailto>
+            <mailtemplate>/system/workplace/templates/urlcheckform</mailtemplate>
+        </checklink>
+        <launchers>
+            <launcher1>com.opencms.flex.CmsXmlTemplateLoader</launcher1>
+            <launcher2>com.opencms.flex.CmsDumpLoader</launcher2>
+            <launcher3>com.opencms.launcher.CmsLinkLauncher</launcher3>
+            <launcher4>com.opencms.flex.CmsJspLoader</launcher4>
+            <launcher5>tv.aleph_null.opencms.xml.generic.CmsXslLauncher</launcher5>
+        </launchers>
+        <UseWpPicturesFromVFS>false</UseWpPicturesFromVFS>
+        <searchbylucene>off</searchbylucene>
+        <tempfileproject>3</tempfileproject>
+        <syncproject>Playground Project</syncproject>
+        <syncpath>/opt/opencms-sync</syncpath>
+        <syncresource>
+            <res1>/playground/</res1>
+        </syncresource>
+        <history>
+            <enabled>true</enabled>
+            <weeks/>
+            <deleteversions>false</deleteversions>
+        </history>
+    </system>
+    <modules>
+        <module>
+            <type>simple</type>
+            <name>org.opencms.default</name>
+            <nicename>OpenCms 5.0 Default module</nicename>
+            <version>3.0</version>
+            <description><![CDATA[This is the traditional "default" module. It contains the "empty" body and the "empty" template. In case you import content from an older OpenCms version, the templates from the 4.x "/content" directory will be stored in this module.
+
+(c) 2003 by Alkacon Software (http://www.alkacon.com).
+]]></description>
+            <author>Alkacon Software</author>
+            <email>info@alkacon.com</email>
+            <creationdate>04.23.2003</creationdate>
+            <exportpoint>
+                <source>/system/modules/org.opencms.default/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <exportpoint>
+                <source>/system/modules/org.opencms.default/lib/</source>
+                <destination>WEB-INF/lib/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters/>
+            <repository/>
+            <uploaddate>11.19.2003</uploaddate>
+            <uploadedby>Admin</uploadedby>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>org.opencms.welcome</name>
+            <nicename>OpenCms 5.0 Welcome page and release notes</nicename>
+            <version>3.0</version>
+            <description><![CDATA[This module contains the OpenCms welcome page and release notes. Deleting this module will remove the "/release" directory and all pages there. It will also remove the "default" template.
+
+(c) 2003 by Alkacon Software (http://www.alkacon.com).]]></description>
+            <author>Alkacon Software</author>
+            <email>info@alkacon.com</email>
+            <creationdate>04.23.2003</creationdate>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters>
+                <para>
+                    <name>additionalresources</name>
+                    <description><![CDATA[Additional resources that belong to this module. Please note: If you delete this module, all resources listed here will be deleted (even if they are directories).]]></description>
+                    <type>string</type>
+                    <value>/release/;/index.jsp</value>
+                </para>
+            </parameters>
+            <repository/>
+            <uploaddate>11.19.2003</uploaddate>
+            <uploadedby>Admin</uploadedby>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>org.opencms.help</name>
+            <nicename>OpenCms 5.0 Workplace online help - Base module</nicename>
+            <version>1.1</version>
+            <description><![CDATA[This module installs the basic templates required for the online help in all languages.
+
+(c) 2003 by Alkacon Software (http://www.alkacon.com).
+]]></description>
+            <author>Alkacon Software</author>
+            <email>info@alkacon.com</email>
+            <creationdate>03.23.2003</creationdate>
+            <exportpoint>
+                <source>/system/modules/org.opencms.help/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters/>
+            <repository/>
+            <uploaddate>12.15.2003</uploaddate>
+            <uploadedby>Admin</uploadedby>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>org.opencms.help.en</name>
+            <nicename>OpenCms 5.0 Workplace online help - English version</nicename>
+            <version>1.10</version>
+            <description><![CDATA[This module installs the english version of the online help.
+
+Thanks to everyone who contributed to this translation. In case you find errors, please report them (and their corrections) to "contributions@opencms.org".
+]]></description>
+            <author>(various contributors)</author>
+            <email>contributions@opencms.org</email>
+            <creationdate>04.23.2003</creationdate>
+            <exportpoint>
+                <source>/system/modules/org.opencms.help.en/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <exportpoint>
+                <source>/system/modules/org.opencms.help.en/lib/</source>
+                <destination>WEB-INF/lib/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation>/system/modules/org.opencms.help.en/index.html</documentation>
+            <dependencies>
+                <dependency>
+                    <name>org.opencms.help</name>
+                    <minversion>1.0</minversion>
+                    <maxversion>-1.0</maxversion>
+                </dependency>
+            </dependencies>
+            <maintenance_class/>
+            <parameters>
+                <para>
+                    <name>additionalresources</name>
+                    <description/>
+                    <type>string</type>
+                    <value>/system/workplace/help/en/</value>
+                </para>
+            </parameters>
+            <repository/>
+            <uploaddate>12.15.2003</uploaddate>
+            <uploadedby>Admin</uploadedby>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>com.example.site</name>
+            <nicename>Example.Com Site</nicename>
+            <version>1.1</version>
+            <description><![CDATA[This module contains the core templates, code, and data for running the Example.Com OpenCms website.
+
+Changes:
+1.1 - Prepared to match book code.]]></description>
+            <author>M Butcher</author>
+            <email>mbutcher@example.com</email>
+            <creationdate>01.09.2004</creationdate>
+            <exportpoint>
+                <source>/system/modules/com.example.site/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <exportpoint>
+                <source>/system/modules/com.example.site/lib/</source>
+                <destination>WEB-INF/lib/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters/>
+            <repository/>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>net.grcomputing.opencms.search.lucene</name>
+            <nicename>Lucene Search Module (OpenCMS 5.0)</nicename>
+            <version>1.5</version>
+            <description><![CDATA[Provides Lucene-based searching through an OpenCMS repository. Lucene is developed by the Apache Jakarta team, and is a robust index-based search engine.
+
+Version 1.5 adds support for DOC and PDF indexing as well as patches and fixes. Documentation has been updated as well. This version includes Lucene 1.3, but no code changes have been made that will render it incompatible with version 1.2.
+
+Version 1.4 adds support for content definitions and a more flexible API for adding document factories for new file / content definiton types.
+
+Version 1.3 adds better indexing support for title and description, optimizes the index, and works around a bug in CmsFile that was preventing certain files from being indexed.
+
+Version 1.2 adds increased support for tagged Plain documents as well as better indexing.
+
+===========
+OFFICIAL SITE: http://opencmslucene.sourceforge.net
+]]></description>
+            <author>Matt Butcher</author>
+            <email>mbutcher@grcomputing.net</email>
+            <creationdate>07.08.2003</creationdate>
+            <exportpoint>
+                <source>/system/modules/net.grcomputing.opencms.search.lucene/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <exportpoint>
+                <source>/system/modules/net.grcomputing.opencms.search.lucene/lib/</source>
+                <destination>WEB-INF/lib/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters/>
+            <repository/>
+            <uploaddate>01.23.2004</uploaddate>
+            <uploadedby>Admin</uploadedby>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>tv.aleph_null.opencms.xml.generic</name>
+            <nicename>Generic XML Module</nicename>
+            <version>1.1</version>
+            <description><![CDATA[This module provides generic XML support to OpenCms.
+]]></description>
+            <author>M Butcher</author>
+            <email>mbutcher@aleph-null.tv</email>
+            <creationdate>02.11.2004</creationdate>
+            <exportpoint>
+                <source>/system/modules/tv.aleph_null.opencms.xml.generic/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <exportpoint>
+                <source>/system/modules/tv.aleph_null.opencms.xml.generic/lib/</source>
+                <destination>WEB-INF/lib/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters/>
+            <repository/>
+        </module>
+        <module>
+            <type>simple</type>
+            <name>com.example.genericxml.xslt</name>
+            <nicename>GenericXML XSLT module</nicename>
+            <version>1.1</version>
+            <description><![CDATA[This module provides eXstensible Stylesheet Language - Transformations (XSLT) services to OpenCms. It uses the GenericXML (genxml) resource type.
+
+Changes:
+1.1 - removed dependence on Aleph-Null code.
+]]></description>
+            <author>M Butcher</author>
+            <email>mbutcher@example.com</email>
+            <creationdate>03.04.2004</creationdate>
+            <exportpoint>
+                <source>/system/modules/com.example.genericxml.xslt/lib/</source>
+                <destination>WEB-INF/lib/</destination>
+            </exportpoint>
+            <exportpoint>
+                <source>/system/modules/com.example.genericxml.xslt/classes/</source>
+                <destination>WEB-INF/classes/</destination>
+            </exportpoint>
+            <view/>
+            <publishclass>
+                <name/>
+            </publishclass>
+            <documentation/>
+            <dependencies/>
+            <maintenance_class/>
+            <parameters>
+                <para>
+                    <name>additionalresources</name>
+                    <description><![CDATA[Location of additional resources for the module.]]></description>
+                    <type>string</type>
+                    <value>/xml/</value>
+                </para>
+            </parameters>
+            <repository/>
+        </module>
+    </modules>
+</registry>

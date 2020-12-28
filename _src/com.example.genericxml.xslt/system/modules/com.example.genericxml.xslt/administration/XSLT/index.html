@@ -1,0 +1,60 @@
+<%@ page session="false" 
+    import="com.opencms.flex.jsp.CmsJspActionElement,
+            com.opencms.file.CmsObject,
+            com.opencms.core.CmsException,
+            tv.aleph_null.opencms.xml.generic.BatchTransformer" 
+%>
+<%
+  String xslt = request.getParameter("xslt");
+  String srcDir = request.getParameter("sourcedir");
+  String destDir = request.getParameter("destdir");
+
+  CmsJspActionElement cmsjsp = 
+      new CmsJspActionElement( pageContext, request, response );
+  String baseUrl = cmsjsp.link( "/system/workplace/" );
+%>
+<html>
+<head><title>XSLT Admin</title></head>
+<script>
+adminUrl = "<%= baseUrl %>action/administration_head.html';
+</script>
+<body 
+  onload="window.top.body.admin_head.location = adminUrl;">
+<h1>XSLT Administration</h1>
+
+
+<form method="GET" target="_self">
+  XSLT Stylesheet: <input type="text" name="xslt" /><br/>
+  Source Dir: <input type="text" name="sourcedir" /><br/>
+  Destination Dir: <input type="text" name="destdir" /><br/>
+  <input type="submit" value="Submit" />
+</form>
+<%
+  if( xslt != null || srcDir != null || destDir != null ) {  
+    CmsObject cms = cmsjsp.getCmsObject();
+
+    boolean filesExist = true;
+    try {
+      cms.readFile( xslt );
+      cms.readFolder( srcDir );
+      cms.readFolder( destDir );      
+    } catch ( CmsException e ) {
+      out.println( "<b>Stylesheet, Source and Destination must exist in VFS" );
+      filesExist = false;
+    }
+    if( filesExist ) {
+      BatchTransformer trans = new BatchTransformer( xslt, cms  );
+      int numProcessed = trans.transform( srcDir, destDir );
+      out.print( "<p>Processed " );
+      out.print( numProcessed );
+      out.print( " Files. Output was written to " + destDir +".</p>");
+    }
+    out.println( "<script>" );
+    out.println( "document.forms[0].xslt.value = '" + xslt + "'" );
+    out.println( "document.forms[0].destdir.value = '" + destDir + "'" );
+    out.println( "document.forms[0].sourcedir.value = '" + srcDir + "'" ); 
+    out.println( "</script>" );
+  }
+%>
+</body>
+</html>
